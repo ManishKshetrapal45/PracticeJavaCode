@@ -3,16 +3,16 @@
 //Return first even and then odd count
 public class CountEvenAndOdd {
     public static void main(String[] args) {
-        int a[] = {1,2,3,4,5,6,7,8,9};
+        int[] a = {1,2,3,4,5,6,7,8,9};
         countEvenAndOdd(a);
     }
 
-    public static void countEvenAndOdd(int a[]) {
+    public static void countEvenAndOdd(int[] a) {
         int odd = 0, even = 0;
-        for (int i=0;i<a.length;i++){
-            if (a[i]%2==0){
+        for (int j : a) {
+            if (j % 2 == 0) {
                 even++;
-            }else{
+            } else {
                 odd++;
             }
         }
