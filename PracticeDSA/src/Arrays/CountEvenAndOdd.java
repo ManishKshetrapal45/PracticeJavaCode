@@ -1,3 +1,5 @@
+package Arrays;
+
 //Count Odd and Even
 //You are given an array. your task is to count the number of even and odd elements.
 //Return first even and then odd count
