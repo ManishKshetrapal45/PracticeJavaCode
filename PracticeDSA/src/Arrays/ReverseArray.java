@@ -13,19 +13,19 @@ First argument is a constant array A.
 Output Format
 Return an integer array.
 
-Example Input
+Example Input:
 Input 1:
 A = [1,2,3,2,1]
 Input 2:
 A = [1,1,10]
 
-Example Output
+Example Output:
 Output 1:
  [1,2,3,2,1]
 Output 2:
  [10,1,1]
 
-Example Explanation
+Example Explanation:
 Explanation 1:
 Reversed form of input array is same as original array
 
@@ -43,7 +43,7 @@ public class ReverseArray {
         System.out.println("Enter array elements");
         for (int j = 0; j < len; j++)
         {
-            A[j] = sc.nextInt();;
+            A[j] = sc.nextInt();
         }
         var arr = reverseArray(A);
 
@@ -55,12 +55,12 @@ public class ReverseArray {
 
     public static int[] reverseArray(int[] A)
     {
-        int i = 0, j = A.length - 1, c = 0;
+        int i = 0, j = A.length - 1, C;
         while (i <= j)
         {
-            c = A[i];
+            C = A[i];
             A[i] = A[j];
-            A[j] = c;
+            A[j] = C;
             i++;
             j--;
         }
