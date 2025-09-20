@@ -51,6 +51,7 @@ public class ReverseArray {
         {
             System.out.print(i+" ");
         }
+        sc.close();
     }
 
     public static int[] reverseArray(int[] A)
