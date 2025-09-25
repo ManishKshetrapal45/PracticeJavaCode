@@ -10,7 +10,7 @@ Array indexing starts from 0.
 If there is no equilibrium index then return -1.
 If there are more than one equilibrium indexes then return the minimum index.
 
-Problem Constraints
+Problem Constraints:
 1 <= N <= 105
 -105 <= A[i] <= 105
 
