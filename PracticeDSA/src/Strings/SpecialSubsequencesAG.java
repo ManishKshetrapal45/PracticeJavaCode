@@ -35,6 +35,26 @@ package Strings;
 
 public class SpecialSubsequencesAG {
     public static void main(String[] args) {
+        //System.out.println(solve("ABCGAG"));
+        System.out.println(solve("GAB"));
+    }
 
+    public static int solve(String A)
+    {
+        long ans = 0;
+        int C = 0;
+        for (int i = A.length() - 1; i >= 0; i--)
+        {
+            if (A.charAt(i) == 'G')
+            {
+                C++;
+            }
+            if (A.charAt(i) == 'A')
+            {
+                ans = ans + ((long)C);
+            }
+        }
+        long t = ans % 1000000007;
+        return ((int)t);
     }
 }
