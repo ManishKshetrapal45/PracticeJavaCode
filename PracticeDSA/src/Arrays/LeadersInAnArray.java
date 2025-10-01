@@ -8,7 +8,7 @@ Problem Constraints:
 1 <= A[i] <= 108
 
 Input Format:
-There is a single input argument which a integer array A
+There is a single input argument which an integer array A
 
 Output Format:
 Return an integer array denoting all the leader elements of the array.
@@ -38,8 +38,37 @@ Explanation 2:
 */
 package Arrays;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LeadersInAnArray {
     public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>(List.of(16, 17, 4, 3, 5, 2));
+        var ans = solve(list);
+        for (Integer i : ans)
+        {
+            System.out.print(i + " ");
+        }
+    }
 
+    public static ArrayList<Integer> solve(ArrayList<Integer> A)
+    {
+        if (A.size() == 1)
+        {
+            return A;
+        }
+        int max = A.get(A.size() - 1);
+        ArrayList<Integer> ans = new ArrayList<>();
+        ans.add(max);
+        for (int i = A.size() - 2; i >= 0; i--)
+        {
+            if (A.get(i) > max)
+            {
+                max = A.get(i);
+                ans.add(max);
+            }
+        }
+
+        return ans;
     }
 }
