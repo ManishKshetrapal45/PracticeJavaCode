@@ -39,8 +39,24 @@ Explanation 2:
 */
 package Arrays;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bulbs {
     public static void main(String[] args) {
+        ArrayList<Integer> A = new ArrayList<>(List.of(0, 1, 0, 1));
+        System.out.println(bulbs(A));
+    }
 
+    public static int bulbs(ArrayList<Integer> A)
+    {
+        int flag = 0, ans = 0;
+        for (Integer integer : A) {
+            if (flag % 2 == integer) {
+                flag += 1;
+                ans = ans + 1;
+            }
+        }
+        return (ans);
     }
 }
