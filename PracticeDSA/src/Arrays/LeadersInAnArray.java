@@ -47,6 +47,7 @@ public class LeadersInAnArray {
         var ans = solve(list);
         for (Integer i : ans)
         {
+
             System.out.print(i + " ");
         }
     }
