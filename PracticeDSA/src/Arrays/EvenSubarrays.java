@@ -33,8 +33,26 @@ Explanation 2:
 */
 package Arrays;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EvenSubarrays {
     public static void main(String[] args) {
+        ArrayList<Integer> A = new ArrayList<>(List.of(2, 4, 8, 6));
+        //List<Integer> A = new ArrayList<>(List.of(2, 4, 8, 7, 6));
+        System.out.println(solve(A));
+    }
 
+    public static String solve(ArrayList<Integer> A)
+    {
+        int N = A.size();
+        if (A.get(0) % 2 == 0 && A.get(N - 1) % 2 == 0 && N % 2 == 0)
+        {
+            return ("YES");
+        }
+        else
+        {
+            return ("NO");
+        }
     }
 }
