@@ -1,4 +1,3 @@
-
 //Amazing Subarrays
 /*
 You are given a string S, and you have to find all the amazing substrings of S.
@@ -33,6 +32,30 @@ package Strings;
 
 public class AmazingSubarrays {
     public static void main(String[] args) {
+        System.out.println(solve("ABEC"));
+    }
 
+    public static int solve(String A)
+    {
+        long ans = 0;
+        int N = A.length();
+        for (int i = 0; i < N; i++)
+        {
+            if (A.charAt(i) == 'A' ||
+                    A.charAt(i) == 'a' ||
+                    A.charAt(i) == 'E' ||
+                    A.charAt(i) == 'e' ||
+                    A.charAt(i) == 'I' ||
+                    A.charAt(i) == 'i' ||
+                    A.charAt(i) == 'O' ||
+                    A.charAt(i) == 'o' ||
+                    A.charAt(i) == 'U' ||
+                    A.charAt(i) == 'u')
+            {
+                ans = ans + ((long)(N - i));
+            }
+        }
+        var t = ans % 10003;
+        return (int)t;
     }
 }
