@@ -42,5 +42,26 @@ public class ColumnSum {
         A.add(Arrays.asList(1, 2, 3));
         A.add(Arrays.asList(4, 5, 6));
         A.add(Arrays.asList(7, 8, 9));
+
+        List<Integer> ans = solve(A);
+        for (Integer i : ans) {
+            System.out.print(i + " ");
+        }
+    }
+
+    public static List<Integer> solve(List<List<Integer>> A)
+    {
+        List<Integer> ans = new ArrayList<>();
+        int sum = 0;
+        for (int i = 0; i < A.get(0).size(); i++)
+        {
+            sum = 0;
+            for (int j = 0; j < A.size(); j++)
+            {
+                sum += A.get(j).get(i);
+            }
+            ans.add(sum);
+        }
+        return ans;
     }
 }
