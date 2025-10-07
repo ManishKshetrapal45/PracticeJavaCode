@@ -1,42 +1,52 @@
-//Column Sum
+//Matrix Subtraction
 /*Problem Description
-You are given a 2D integer matrix A, return a 1D integer array containing column-wise sums of original matrix.
+You are given two integer matrices A and B having same size (Both having same number of rows (N) and columns (M)). You have to subtract matrix B from A and return the resultant matrix. (i.e. return the matrix A - B).
+If A and B are two matrices of the same order (same dimensions). Then A - B is a matrix of the same order as A and B and its elements are obtained by doing an element wise subtraction of A from B.
 
-Problem Constraints
-1 <= A.size() <= 103
-1 <= A[i].size() <= 103
-1 <= A[i][j] <= 103
+Problem Constraints:
+1 <= N, M <= 103
+-109 <= A[i][j], B[i][j] <= 109
 
 Input Format:
-First argument is a 2D array of integers.(2D matrix).
+The first argument is the 2D integer array A
+Second argument is the 2D integer array B
 
 Output Format:
-Return an array containing column-wise sums of original matrix.
+Return a 2D matrix denoting A - B.
 
 Example Input:
 Input 1:
-[1,2,3,4]
-[5,6,7,8]
-[9,2,3,4]
+A =  [[1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]]
+
+B =  [[9, 8, 7],
+      [6, 5, 4],
+      [3, 2, 1]]
+Input 2:
+A = [[1, 1]]
+B = [[2, 3]]
 
 Example Output:
 Output 1:
-{15,10,13,16}
+ [[-8, -6, -4],
+  [-2, 0, 2],
+  [4, 6, 8]]
+Output 2:
+ [[-1, -2]]
 
-Example Explanation:
-Explanation 1
-Column 1 = 1+5+9 = 15
-Column 2 = 2+6+2 = 10
-Column 3 = 3+7+3 = 13
-Column 4 = 4+8+4 = 16
+Example Explanation
+Explanation 1:
+Explanation 2:
+ [[1, 1]] - [[2, 3]] = [[1 - 2, 1 - 3]] = [[-1, -2]]
 */
 package ArrayMatrix;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
-public class AddTheMatrices {
+public class MatrixSubtraction {
     public static void main(String[] args) {
         List<List<Integer>> A = new ArrayList<>();
         A.add(Arrays.asList(1, 2, 3));
@@ -62,8 +72,8 @@ public class AddTheMatrices {
         int num;
         for(int i=0;i<A.size();i++){
             List<Integer> arr = new ArrayList<>();
-            for(int j=0;j<A.get(0).size();j++){
-                num=A.get(i).get(j)+B.get(i).get(j);
+            for(int j=0;j<A.get(i).size();j++){
+                num=A.get(i).get(j)-B.get(i).get(j);
                 arr.add(num);
             }
             addArray.add(arr);
