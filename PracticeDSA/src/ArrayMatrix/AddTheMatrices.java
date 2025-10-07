@@ -43,26 +43,31 @@ public class AddTheMatrices {
         A.add(Arrays.asList(4, 5, 6));
         A.add(Arrays.asList(7, 8, 9));
 
-        List<Integer> ans = solve(A);
-        for (int i = 0; i < ans.size(); i++)
-        {
-            System.out.println(ans.get(i) + " ");
+        List<List<Integer>> B = new ArrayList<>();
+        B.add(Arrays.asList(1, 2, 3));
+        B.add(Arrays.asList(4, 5, 6));
+        B.add(Arrays.asList(7, 8, 9));
+
+        List<List<Integer>> ans = solve(A,B);
+        for (List<Integer> i : ans) {
+            for(Integer j : i){
+                System.out.print(j + "  ");
+            }
+            System.out.println();
         }
     }
 
-    public static List<Integer> solve(List<List<Integer>> A)
-    {
-        List<Integer> ans = new ArrayList<>();
-        int sum;
-        for (int i = 0; i < A.get(0).size(); i++)
-        {
-            sum = 0;
-            for (int j = 0; j < A.size(); j++)
-            {
-                sum += A.get(j).get(i);
+    public static List<List<Integer>> solve(List<List<Integer>> A, List<List<Integer>> B) {
+        List<List<Integer>> addArray = new ArrayList<>();
+        int num;
+        for(int i=0;i<A.size();i++){
+            List<Integer> arr = new ArrayList<>();
+            for(int j=0;j<A.get(0).size();j++){
+                num=A.get(i).get(j)+B.get(i).get(j);
+                arr.add(num);
             }
-            ans.add(sum);
+            addArray.add(arr);
         }
-        return ans;
+        return(addArray);
     }
 }
