@@ -53,6 +53,7 @@ public class MinMaxArray {
             numbers[i] = sc.nextInt();
         }
         minMax(numbers);
+        sc.close();
     }
 
     public static void minMax(int[] a){
