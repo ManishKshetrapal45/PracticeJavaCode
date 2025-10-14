@@ -67,6 +67,7 @@ public class SearchElement {
 
             System.out.println(isElementPresent(A,B));
         }
+        sc.close();
     }
 
     public static int isElementPresent(int[] A, int B)

@@ -55,7 +55,7 @@ public class AmazingSubarrays {
                 ans = ans + ((long)(N - i));
             }
         }
-        var t = ans % 10003;
+        long t = ans % 10003;
         return (int)t;
     }
 }
